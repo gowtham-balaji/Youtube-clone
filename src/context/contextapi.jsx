@@ -6,7 +6,7 @@ import {createContext , useState , useEffect} from "react"
 
 import {fetchDataFromApi} from "../utils/api"
 
-const context = createContext() 
+export const Context = createContext() 
 
 export const AppContext = (props) => {
     const[loading , setLoading] = useState(false)
@@ -29,7 +29,7 @@ export const AppContext = (props) => {
     }
    
     return(
-        <context.Provider
+        <Context.Provider
           value={{
             loading,
             setLoading,
@@ -42,7 +42,7 @@ export const AppContext = (props) => {
           }}
         >
         {props.children}
-        </context.Provider>
+        </Context.Provider>
     )
 }
 
