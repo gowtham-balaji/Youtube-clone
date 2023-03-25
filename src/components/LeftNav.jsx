@@ -1,10 +1,41 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import {categories } from '../utils/constants'
+import { Context } from '../context/contextapi'
+
+import LeftMenuItem from './LeftMenuItem'
 
 const LeftNav = () => {
+  const {selectedCategory , setSelectedCategory , mobileMenu} = useContext(Context)
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <div
+    className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
+        mobileMenu ? "translate-x-0" : ""
+    }`}
+>
+        <div>
+          {categories.map((item) => {
+            return (
+               <React.Fragment key= {item.name}>
+                    <LeftMenuItem
+                    text={item.type === "home" ? "home" : item.name} 
+                    icon={item.icon}
+                    action={() => {}}
+                    className = {`${
+                      selectedCategory === item.name 
+                      ? "bg-white/[0.15]" 
+                      : ""
+                    }` }
+                    />
+                     {item.divider && (
+                      <hr className='my-5 border-white/[0.2]' />
+                    )}
+               </React.Fragment>
+            )
+          })}
+         </div>
+        </div>
   )
 }
 

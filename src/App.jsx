@@ -10,8 +10,9 @@ import VideoDetails from './components/VideoDetails'
 
 function App() {
   return(
-    <BrowserRouter>
+    
     <AppContext>
+      <BrowserRouter>
      
       <div className='h-full flex flex-col'>
           <Header />
@@ -24,9 +25,9 @@ function App() {
           </Routes>
           
          </div>
-      
+         </BrowserRouter>
     </AppContext>
-      </BrowserRouter>
+      
          
   )
   
