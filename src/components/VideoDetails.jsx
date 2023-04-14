@@ -7,7 +7,7 @@ import { abbreviateNumber } from 'js-abbreviation-number'
 
 import { fetchDataFromApi } from '../utils/api'
 import { Context } from '../context/contextapi'
-import SuggestionVideoCard from './suggestionVideoCard'
+import SuggestionVideoCard from './SuggestionVideoCard'
 
 
 
