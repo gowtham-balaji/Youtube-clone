@@ -30,7 +30,7 @@ const Header = () => {
         }
     };
 
-    const mobileToggle = () => {
+    const mobileMenuToggle = () => {
         setMobileMenu(!mobileMenu)
     }
 
@@ -43,9 +43,11 @@ const Header = () => {
 
             <div className="flex h-5 items-center">
                 {pageName !== "video" && (
-                    <div className="flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]"
-                        onClick={mobileToggle}
+                    <div 
+                       className="flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]"
+                       onClick={mobileMenuToggle}
                     >
+                    
                         {mobileMenu ? (
                             <CgClose className="text-white text-xl" />
                         ) : (
